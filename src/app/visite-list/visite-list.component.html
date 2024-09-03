@@ -1,0 +1,21 @@
+<div class="visite-list-container">
+  <h2>Liste des visites</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Adresse</th>
+      <th>Objet</th>
+      <th>RC</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let visite of visites">
+      <td>{{ visite.startDate }} - {{ visite.endDate }}</td>
+      <td>{{ visite.address }}</td>
+      <td>{{ visite.object }}</td>
+      <td>{{ visite.rc }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

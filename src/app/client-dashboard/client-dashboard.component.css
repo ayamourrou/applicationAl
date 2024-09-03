@@ -1,0 +1,46 @@
+/* Styles pour le tableau de bord client */
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f4f4f4;
+}

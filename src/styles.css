@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+h2 {
+  color: #0033cc; /* Bleu */
+}
+
+button {
+  background-color: #ffcc00; /* Jaune */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc0000; /* Rouge */
+}
+
+a {
+  color: #0033cc; /* Bleu */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}

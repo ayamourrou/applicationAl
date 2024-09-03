@@ -1,0 +1,18 @@
+<div class="reservation-form-container">
+  <h2>Réserver un hôtel</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="hotelName">Nom de l'hôtel</label>
+      <input type="text" id="hotelName" [(ngModel)]="reservation.hotelName" name="hotelName" required>
+    </div>
+    <div class="form-group">
+      <label for="checkIn">Date d'arrivée</label>
+      <input type="date" id="checkIn" [(ngModel)]="reservation.checkIn" name="checkIn" required>
+    </div>
+    <div class="form-group">
+      <label for="checkOut">Date de départ</label>
+      <input type="date" id="checkOut" [(ngModel)]="reservation.checkOut" name="checkOut" required>
+    </div>
+    <button type="submit">Réserver</button>
+  </form>
+</div>

@@ -1,0 +1,46 @@
+/* Styles pour le tableau de bord administrateur */
+.admin-dashboard-container {
+  padding: 20px;
+}
+
+.admin-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-dashboard-header h1 {
+  margin: 0;
+}
+
+.create-btn {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: #117a8b;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f8f9fa;
+}
