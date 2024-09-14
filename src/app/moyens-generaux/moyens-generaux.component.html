@@ -1,0 +1,34 @@
+<div class="reservation-form">
+  <h2>Réserver un hôtel pour le client</h2>
+  <form (ngSubmit)="ajouterReservation()">
+    <div>
+      <label>Nom du client :</label>
+      <input type="text" [(ngModel)]="nouvelleReservation.clientNom" name="clientNom" required>
+    </div>
+    <div>
+      <label>Hôtel :</label>
+      <input type="text" [(ngModel)]="nouvelleReservation.hotel" name="hotel" required>
+    </div>
+    <div>
+      <label>Date début :</label>
+      <input type="date" [(ngModel)]="nouvelleReservation.dateDebut" name="dateDebut" required>
+    </div>
+    <div>
+      <label>Date fin :</label>
+      <input type="date" [(ngModel)]="nouvelleReservation.dateFin" name="dateFin" required>
+    </div>
+    <button type="submit">Ajouter réservation</button>
+  </form>
+</div>
+
+<div class="reservation-list">
+  <h3>Liste des réservations</h3>
+  <ul>
+    <li *ngFor="let reservation of reservations; let i = index">
+      <p>Client: {{ reservation.clientNom }} | Hôtel: {{ reservation.hotel }} | Du {{ reservation.dateDebut }} au {{ reservation.dateFin }} | Statut: {{ reservation.statut }}</p>
+      <button (click)="modifierReservation(i, 'Confirmée')">Confirmer</button>
+      <button (click)="modifierReservation(i, 'Annulée')">Annuler</button>
+      <button (click)="supprimerReservation(i)">Supprimer</button>
+    </li>
+  </ul>
+</div>

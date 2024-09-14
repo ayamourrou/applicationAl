@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { VisiteService } from '../visite.service';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,18 +9,27 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  visites: any[] = [];
+  totalUtilisateurs = 150; // Exemple de données statiques
+  reservationsAujourdhui = 20;
+  tachesEnAttente = 5;
 
-  constructor(private visiteService: VisiteService) {}
+  utilisateurs = [
+    { nom: 'Dupont', prenom: 'Jean', email: 'jean.dupont@example.com', role: 'Utilisateur' },
+    { nom: 'Martin', prenom: 'Marie', email: 'marie.martin@example.com', role: 'Administrateur' },
+    { nom: 'Durand', prenom: 'Paul', email: 'paul.durand@example.com', role: 'Utilisateur' }
+  ];
 
-  ngOnInit(): void {
-    this.visiteService.getVisites().subscribe(data => {
-      this.visites = data;
-    });
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  editUtilisateur(utilisateur: any) {
+    console.log('Modification de l\'utilisateur :', utilisateur);
+    // Logique de modification
   }
 
-  reserverHotel(visite: any) {
-    // Logique pour réserver un hôtel
-    alert(`Réservation d'hôtel pour la visite à ${visite.address}`);
+  deleteUtilisateur(utilisateur: any) {
+    console.log('Suppression de l\'utilisateur :', utilisateur);
+    // Logique de suppression
   }
 }

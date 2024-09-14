@@ -1,29 +1,50 @@
 <div class="client-dashboard-container">
-  <h2>Planifier une visite</h2>
-  <form (ngSubmit)="onSubmit()">
+  <h2>Annoncez votre visite</h2>
+
+  <!-- Formulaire pour annoncer la visite -->
+  <form (ngSubmit)="submitVisit()">
     <div class="form-group">
-      <label for="startDate">Date de début</label>
-      <input type="date" id="startDate" [(ngModel)]="visite.startDate" name="startDate" required>
+      <label for="dateDebut">Date de début</label>
+      <input type="date" id="dateDebut" [(ngModel)]="visit.dateDebut" name="dateDebut" required>
     </div>
     <div class="form-group">
-      <label for="endDate">Date de fin</label>
-      <input type="date" id="endDate" [(ngModel)]="visite.endDate" name="endDate" required>
+      <label for="dateFin">Date de fin</label>
+      <input type="date" id="dateFin" [(ngModel)]="visit.dateFin" name="dateFin" required>
     </div>
     <div class="form-group">
-      <label for="address">Adresse</label>
-      <input type="text" id="address" [(ngModel)]="visite.address" name="address" required>
+      <label for="adresse">Adresse</label>
+      <input type="text" id="adresse" [(ngModel)]="visit.adresse" name="adresse" required>
     </div>
     <div class="form-group">
-      <label for="object">Objet de la visite</label>
-      <input type="text" id="object" [(ngModel)]="visite.object" name="object" required>
+      <label for="objet">Objet de la visite</label>
+      <input type="text" id="objet" [(ngModel)]="visit.objet" name="objet" required>
     </div>
+
+    <!-- Section des services supplémentaires avec les checkboxes -->
+    <h3>Services supplémentaires</h3>
     <div class="form-group">
-      <label for="rc">Choisir un RC</label>
-      <select id="rc" [(ngModel)]="visite.rc" name="rc" required>
-        <option *ngFor="let rc of rcList" [value]="rc">{{ rc }}</option>
-      </select>
+      <label>
+        <input type="checkbox" [(ngModel)]="visit.services.cafePause" name="cafePause">
+        Pause café
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="visit.services.petitDejeuner" name="petitDejeuner">
+        Petit déjeuner
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="visit.services.Dejeuner" name="Dejeuner">
+        déjeuner
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="visit.services.visitesMonuments" name="visitesMonuments">
+        Visites de monuments
+      </label>
+      <label>
+        <input type="checkbox" [(ngModel)]="visit.services.afterwork" name="afterwork">
+        Afterwork / Dîner
+      </label>
     </div>
-    <button type="submit">Planifier</button>
+
+    <button type="submit">Annoncer la visite</button>
   </form>
-  <a routerLink="/visite-list">Voir la liste des visites</a>
 </div>

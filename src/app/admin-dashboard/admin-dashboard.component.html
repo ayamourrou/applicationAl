@@ -1,20 +1,44 @@
 <div class="admin-dashboard-container">
-  <h2>Liste des visites</h2>
+  <h2>Tableau de Bord Administrateur</h2>
+
+  <!-- Statistiques -->
+  <div class="stats-container">
+    <div class="stat-item">
+      <h3>Total des utilisateurs</h3>
+      <p>{{ totalUtilisateurs }}</p>
+    </div>
+    <div class="stat-item">
+      <h3>Réservations aujourd'hui</h3>
+      <p>{{ reservationsAujourdhui }}</p>
+    </div>
+    <div class="stat-item">
+      <h3>Tâches en attente</h3>
+      <p>{{ tachesEnAttente }}</p>
+    </div>
+  </div>
+
+  <!-- Liste des utilisateurs (Exemple de gestion) -->
+  <h3>Liste des utilisateurs</h3>
   <table>
     <thead>
     <tr>
-      <th>Date</th>
-      <th>Adresse</th>
-      <th>Objet</th>
-      <th>Action</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Rôle</th>
+      <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let visite of visites">
-      <td>{{ visite.startDate }} - {{ visite.endDate }}</td>
-      <td>{{ visite.address }}</td>
-      <td>{{ visite.object }}</td>
-      <td><button (click)="reserverHotel(visite)">Réserver Hôtel</button></td>
+    <tr *ngFor="let utilisateur of utilisateurs">
+      <td>{{ utilisateur.nom }}</td>
+      <td>{{ utilisateur.prenom }}</td>
+      <td>{{ utilisateur.email }}</td>
+      <td>{{ utilisateur.role }}</td>
+      <td>
+        <button (click)="editUtilisateur(utilisateur)">Modifier</button>
+        <button (click)="deleteUtilisateur(utilisateur)">Supprimer</button>
+      </td>
     </tr>
     </tbody>
   </table>

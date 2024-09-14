@@ -1,0 +1,127 @@
+.moyens-generaux-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #003366; /* Bleu foncé pour les titres */
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: #0056b3; /* Bleu */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Bleu */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+.reservations-list {
+  margin-top: 40px;
+}
+
+.reservations-list h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #d9534f; /* Rouge pour attirer l'attention */
+}
+
+.reservations-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reservations-list li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 6px solid #ffc107; /* Jaune */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reservations-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.reservation-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reservation-details span {
+  color: #333;
+  font-weight: bold;
+}
+
+.reservation-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.reservation-actions button {
+  background-color: #d9534f; /* Rouge pour les actions */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reservation-actions button:hover {
+  background-color: #c9302c;
+}
+
+.reservation-actions button.modify {
+  background-color: #f0ad4e; /* Jaune pour modification */
+}
+
+.reservation-actions button.modify:hover {
+  background-color: #ec971f;
+}

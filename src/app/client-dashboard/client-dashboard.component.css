@@ -1,46 +1,33 @@
-/* Styles pour le tableau de bord client */
-.dashboard-container {
+.client-dashboard-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+h2 {
+  color: #333;
+}
+
+.form-group {
   margin-bottom: 20px;
 }
 
-.dashboard-header h1 {
-  margin: 0;
+input[type="text"], input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.add-btn {
-  background-color: #28a745;
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.add-btn:hover {
-  background-color: #218838;
-}
-
-.table-container {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table th, table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-}
-
-table th {
-  background-color: #f4f4f4;
 }

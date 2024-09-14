@@ -1,23 +1,30 @@
 <div class="rc-dashboard-container">
-  <h2>Planifier une visite</h2>
-  <form (ngSubmit)="onSubmit()">
+  <h2>Réservation de Visite</h2>
+  <a routerLink="/visite-list" class="link-to-visite-list">Voir la liste des visites</a>
+  <form (ngSubmit)="soumettreVisite()">
     <div class="form-group">
-      <label for="startDate">Date de début</label>
-      <input type="date" id="startDate" [(ngModel)]="visite.startDate" name="startDate" required>
+      <label for="dateDebut">Date de Début</label>
+      <input type="date" id="dateDebut" [(ngModel)]="visite.dateDebut" name="dateDebut" required>
     </div>
     <div class="form-group">
-      <label for="endDate">Date de fin</label>
-      <input type="date" id="endDate" [(ngModel)]="visite.endDate" name="endDate" required>
+      <label for="dateFin">Date de Fin</label>
+      <input type="date" id="dateFin" [(ngModel)]="visite.dateFin" name="dateFin" required>
     </div>
     <div class="form-group">
-      <label for="address">Adresse</label>
-      <input type="text" id="address" [(ngModel)]="visite.address" name="address" required>
+      <label for="adresse">Adresse</label>
+      <input type="text" id="adresse" [(ngModel)]="visite.adresse" name="adresse" required>
     </div>
     <div class="form-group">
-      <label for="object">Objet de la visite</label>
-      <input type="text" id="object" [(ngModel)]="visite.object" name="object" required>
+      <label for="objet">Objet de la Visite</label>
+      <input type="text" id="objet" [(ngModel)]="visite.objet" name="objet" required>
     </div>
-    <button type="submit">Planifier</button>
+    <button type="submit">Enregistrer la Visite</button>
   </form>
-  <a routerLink="/visite-list">Voir la liste des visites</a>
+
+  <h3>Liste des Visites</h3>
+  <ul>
+    <li *ngFor="let visite of visites">
+      {{ visite.dateDebut }} - {{ visite.dateFin }}: {{ visite.adresse }} ({{ visite.objet }})
+    </li>
+  </ul>
 </div>

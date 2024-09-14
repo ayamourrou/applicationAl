@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { VisiteService } from '../visite.service';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -12,17 +11,52 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['./reservation-form.component.css']
 })
 export class ReservationFormComponent {
-  reservation: any = {
-    hotelName: '',
-    checkIn: '',
-    checkOut: ''
+
+  // Objet pour stocker les informations de réservation
+  reservation = {
+    clientNom: '',
+    clientPrenom: '',
+    hotel: '',
+    dateDebut: '',
+    dateFin: '',
+    adresse: ''
   };
 
-  constructor(private visiteService: VisiteService) {}
+  // Liste pour stocker les réservations
+  reservations: any[] = [];
 
+  // Fonction pour soumettre le formulaire de réservation
   onSubmit() {
-    // Logique pour enregistrer la réservation
-    // Ici, tu peux envoyer la réservation au backend ou lier à une visite spécifique
-    alert(`Réservation faite pour l'hôtel ${this.reservation.hotelName}`);
+    if (this.reservation.clientNom && this.reservation.clientPrenom && this.reservation.hotel &&
+      this.reservation.dateDebut && this.reservation.dateFin && this.reservation.adresse) {
+
+      // Ajouter la réservation à la liste des réservations
+      this.reservations.push({ ...this.reservation });
+
+      // Réinitialiser le formulaire
+      this.resetForm();
+
+      console.log('Réservation effectuée avec succès !');
+      console.log(this.reservations); // Afficher la liste des réservations dans la console
+    } else {
+      console.log('Veuillez remplir tous les champs.');
+    }
+  }
+
+  // Réinitialiser le formulaire après la soumission
+  resetForm() {
+    this.reservation = {
+      clientNom: '',
+      clientPrenom: '',
+      hotel: '',
+      dateDebut: '',
+      dateFin: '',
+      adresse: ''
+    };
+  }
+
+  // Voir la liste des réservations
+  getReservations() {
+    return this.reservations;
   }
 }
